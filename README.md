@@ -1,2 +1,2 @@
 # the-look-ios
-iOS Application for The Look's platform
+iOS Application for The Look's platform, YEET
