@@ -410,7 +410,13 @@ class AdDetails: UIViewController, UIScrollViewDelegate, CLLocationManagerDelega
         }
     }
     
-
+    // Mark: - Buy Button
+    
+   
+    @IBAction func buyButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCheckout", sender: nil)
+    }
+    
     // MARK: - LIKE AD BUTTON
     @IBAction func likeButt(_ sender: UIButton) {
         if PFUser.current() != nil {
