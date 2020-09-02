@@ -410,7 +410,23 @@ class AdDetails: UIViewController, UIScrollViewDelegate, CLLocationManagerDelega
         }
     }
     
-
+    // Mark: - Buy Button
+    
+   
+    @IBAction func buyButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCheckout", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCheckout" {
+               if let checkoutVC = segue.destination as? CheckoutViewController {
+                //Stripe takes payment amounts in the form of cents
+                //Multiply by 100 to get cents from $xx.xx format
+                checkoutVC.params["amount"] = Int(self.adPriceString)! * 100
+               }
+           }
+    }
+    
     // MARK: - LIKE AD BUTTON
     @IBAction func likeButt(_ sender: UIButton) {
         if PFUser.current() != nil {

@@ -12,6 +12,7 @@ import UIKit
 import Parse
 import ParseFacebookUtilsV4
 import UserNotifications
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        Stripe.setDefaultPublishableKey("pk_test_51HJ112DAr8zGb0WGdKMk2n6Dr0zuQFnPz0GNkVatJFkPI3OdpytVFjfcA7qVdZPZMpY8DusmI0yMWc891WYhr4AJ00J5aaDRLW")
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
